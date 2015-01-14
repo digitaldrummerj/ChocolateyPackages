@@ -24,8 +24,8 @@
     <tags>google android jetbrains IntelliJ IDEA AndroidStudio</tags>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://github.com/digitaldrummerj/ChocolateyPackages/raw/master/AndroidStudio/androidstudio_logo.png</iconUrl>
-    <releaseNotes></releaseNotes>
+    <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/AndroidStudio/androidstudio_logo.png</iconUrl>
+    <releaseNotes>http://tools.android.com/recent</releaseNotes>
 	        <dependencies>
             <dependency id="jdk7"  />
             <dependency id="android-sdk"  />
