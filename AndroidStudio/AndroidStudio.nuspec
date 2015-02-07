@@ -1,37 +1,50 @@
-<?xml version="1.0"?>
-<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <metadata>
-    <id>AndroidStudio</id>
-    <title>Android Studio </title>
-    <version>1.0.1</version>
-    <authors>Google</authors>
-    <owners>Justin James</owners>
-    <summary>Android Studio is the official IDE for Android application based on IntelliJ IDEA.</summary>
-    <description>Android Studio is the official  Android development environment based on IntelliJ IDEA. Similar to Eclipse with the ADT Plugin, Android Studio provides integrated Android developer tools for development and debugging. On top of the capabilities you expect from IntelliJ, Android Studio offers:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>AndroidStudio</id>
+        <version>1.0.1</version>
+        <title>Android Studio</title>
+        <authors>Google</authors>
+        <owners>Justin James</owners>
+        <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+        <projectUrl>http://developer.android.com/sdk/installing/studio.html</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/AndroidStudio/androidstudio_logo.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Android Studio is a new Android development environment based on IntelliJ IDEA. Similar to Eclipse with the ADT Plugin, Android Studio provides integrated Android developer tools for development and debugging. 
 
-* Flexible Gradle-based build support.
-* Build variants and multiple apk file generation
-* Code templates to help you build common app features
-* Rich layout editor with support for drag and drop theme editing
+On top of the capabilities you expect from IntelliJ, Android Studio offers:
+
+
+* Gradle-based build support.
+* Android-specific refactoring and quick fixes.
 * Lint tools to catch performance, usability, version compatibility and other problems.
 * ProGuard and app-signing capabilities.
-* Built-in support for Google Cloud Platform, making it easy to integrate Google Cloud Messaging and App Engine
-* And much more
+* Template-based wizards to create common Android designs and components.
+* A rich layout editor that allows you to drag-and-drop UI components, preview layouts on multiple screen configurations, and much more.
 
-      http://developer.android.com/tools/studio/index.html
-    </description>
-    <projectUrl>http://developer.android.com/tools/studio/index.html</projectUrl>
-    <tags>google android jetbrains IntelliJ IDEA AndroidStudio</tags>
-    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/AndroidStudio/androidstudio_logo.png</iconUrl>
-    <releaseNotes>http://tools.android.com/recent</releaseNotes>
-	        <dependencies>
-            <dependency id="jdk7"  />
-            <dependency id="android-sdk"  />
+http://blogs.jetbrains.com/idea/2013/05/intellij-idea-and-android-studio-faq/
+
+==================OPTIONAL COMMAND LINE ARGUMENTS ==================
+To pin Android Studio to the taskbar pass in: /PinnedToTaskbar:true
+
+To create a desktop icon for Android Studio pass in: /AddToDesktop:true
+
+cinst AndroidStudio -packageParameters "/PinnedToTaskbar:true /AddToDesktop:true"</description>
+        <summary>Android Studio is a new Android development environment based on IntelliJ IDEA.</summary>
+        <releaseNotes>http://developer.android.com/tools/revisions/studio.html
+
+* Upgraded to Android Studio 1.0.1.
+* Added ability to pin Android Studio to taskbar
+* Added ability to create a desktop shortcut</releaseNotes>
+        <tags>google android jetbrains IntelliJ IDEA androidstudio</tags>
+        <dependencies>
+            <dependency id="android-sdk" version="23.0.2" />
+            <dependency id="jdk7" version="7.0.72" />
         </dependencies>
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
+    </metadata>
+    <files>
+        <file src="tools\chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />
+        <file src="tools\chocolateyUninstall.ps1" target="tools\chocolateyUninstall.ps1" />
+        <file src="tools\common.ps1" target="tools\common.ps1" />
+    </files>
 </package>

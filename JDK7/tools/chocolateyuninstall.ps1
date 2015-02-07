@@ -35,24 +35,37 @@ param(
 function Uninstall-JDK-And-JRE {
     $use64bit = use64bit
     if ($use64bit) {
-        $jdk = "/qn /x {64A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"
-        $jre = "/qn /x {26A24AE4-039D-4CA4-87B4-2F864" + $uninstall_id + "F0}"   
+    # /qn
+        # HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{64A3A4F4-B792-11D6-A78A-00B0D0170720}
+        $jdk = " /x {64A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"       
+        # HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{26A24AE4-039D-4CA4-87B4-2F06417072FF}
+        $jre = " /x {26A24AE4-039D-4CA4-87B4-2F064" + $uninstall_id + "FF}"   
     } else {
-        $jdk = "/qn /x {32A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"
-        $jre = "/qn /x {26A24AE4-039D-4CA4-87B4-2F832" + $uninstall_id + "F0}"   
+        $jdk = " /x {32A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"
+        $jre = " /x {26A24AE4-039D-4CA4-87B4-2F832" + $uninstall_id + "FF}"   
     }
+     Write-Host "Uninstalling JDK"
      Start-ChocolateyProcessAsAdmin $jdk 'msiexec'
+     Write-Host "Completed Uninstalling JDK"
+     
+     Write-Host "Uninstalling JRE"
      Start-ChocolateyProcessAsAdmin $jre 'msiexec'
+     Write-Host "Completed Uninstalling JRE"
 }
 try {  
   Uninstall-JDK-And-JRE
 
   $java_bin = get-java-bin
+  
   Uninstall-ChocolateyPath $java_bin 'Machine'
   if ([Environment]::GetEnvironmentVariable('CLASSPATH','Machine') -eq '.;') {
+        Write-Host "Uninstalled Machine Environment Variable 'CLASSPATH'"
         Install-ChocolateyEnvironmentVariable 'CLASSPATH' $null 'Machine'
   }
+  
+  Write-Host "Made Machine Environment Variable 'JAVA_HOME' blank"
   Install-ChocolateyEnvironmentVariable 'JAVA_HOME' $null 'Machine'
+  
   Write-ChocolateySuccess 'jdk7'
 } catch {
   Write-ChocolateyFailure 'jdk7' "$($_.Exception.Message)"

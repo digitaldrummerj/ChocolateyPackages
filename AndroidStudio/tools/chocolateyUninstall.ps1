@@ -17,7 +17,8 @@ try
 	# Remove Desktop Lnk if it exist
 	$desktop = $([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory))
 	$link = Join-Path $desktop "$([System.IO.Path]::GetFileName($studioExe)).lnk"
-	$desktop = $([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory))
+
+    $desktop = $([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory))
 	$desktopLink = Join-Path $desktop "$link.lnk"
 	if (Test-Path ($desktopLink)) {Remove-Item $desktopLink -force}
 

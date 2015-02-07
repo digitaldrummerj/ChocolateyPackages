@@ -1,8 +1,8 @@
 $package = 'jdk7'
 $build = '14'
-$jdk_version = '7u71' 
-$java_version = "1.7.0_71"
-$uninstall_id = "17071" 
+$jdk_version = '7u72' 
+$java_version = "1.7.0_72"
+$uninstall_id = "17072" 
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
 $customArgs = $env:chocolateyInstallArguments
@@ -25,6 +25,18 @@ function get-programfilesdir() {
     return $programFiles
 }
 
+function checkIfInstalled()
+{
+    $installedJreVersion = dir "HKLM:\SOFTWARE\JavaSoft\Java Runtime Environment" | select -expa pschildname -Last 1
+    $installedJdkVersion = dir "HKLM:\SOFTWARE\JavaSoft\Java Development Kit" | select -expa pschildname -Last 1
+    
+    Write-Debug "Installed JDK Version: $installedJdkVersion"
+    $isInstalled = $installedJdkVersion -eq  $java_version
+    
+    Write-Debug "Jdk IsInstalled: $isInstalled"
+    return $isinstalled
+    
+}
 
 function download-from-oracle($url, $output_filename) {
     if (-not (has_file($output_fileName))) {
@@ -32,8 +44,11 @@ function download-from-oracle($url, $output_filename) {
 
         [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
         $client = New-Object Net.WebClient
+        $client.Proxy = [System.Net.WebRequest]::DefaultWebProxy
         $dummy = $client.Headers.Add('Cookie', 'gpw_e24=http://www.oracle.com; oraclelicense=accept-securebackup-cookie')
         $dummy = $client.DownloadFile($url, $output_filename)
+        
+        Write-Host  "Completed Downloading JDK from $url"
     }  
 }
 
@@ -72,6 +87,15 @@ function get-arch() {
 }
 
 function chocolatey-install() {
+
+    if (checkIfInstalled)
+    {
+        Write-Host "JDK $java_version already installed."
+        Write-ChocolateySuccess $package
+        return
+    }
+ 
+
     $jdk_file = download-jdk
     $arch = get-arch
     $java_home = get-java-home

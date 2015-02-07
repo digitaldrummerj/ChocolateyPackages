@@ -11,21 +11,27 @@ try {
         unzipLocation = $extractionPath;    
     }
     
-    Install-ChocolateyZipPackage @params    
+    Install-ChocolateyZipPackage @params
+    
     
     $studioExe = (gci "${extractionPath}/android-studio/bin/studio64.exe").FullName | sort -Descending | Select -first 1
     
     . (Join-Path $(Split-Path -parent $MyInvocation.MyCommand.Definition) 'Common.ps1')
     $customArgs = $env:chocolateyPackageParameters
     $settings = GetArguments $customArgs
-        
+    
+    
+    
+    
     if ($settings.addtodesktop -eq "true")
     {
+        Write-Host "AddToDesktop Value: " $settings.addtodesktop
         Install-ChocolateyDesktopLink $studioExe
     }
     
     if ($settings.pinnedtotaskbar -eq "true")
     {
+        Write-Host "PinnedToTaskbar Value: " $settings.pinnedtotaskbar
         Install-ChocolateyPinnedTaskBarItem $studioExe
     }
     

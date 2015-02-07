@@ -59,12 +59,14 @@ param(
     $folder=$shell.Namespace($path)    
     $item = $folder.Parsename((split-path $targetFilePath -leaf)) 
     $itemVerb = $item.Verbs() | ? {$_.Name.Replace("&","") -eq $verb} 
+    Write-Host "Checking if Android Studio is pinned to the taskbar"
     if($itemVerb -eq $null){ 
-      Write-Host "TaskBar verb not found for $item. It may have already been unpinned"
+      Write-Host "Android Studio is not pinned to the taskbar"
     } else { 
         $itemVerb.DoIt() 
+        Write-Host "`'$targetFilePath`' has been unpinned from the task bar on your desktop"
     } 
-    Write-Host "`'$targetFilePath`' has been unpinned from the task bar on your desktop"
+    
   } else {
     $errorMessage = "`'$targetFilePath`' does not exist, not able to unpin from task bar"
   }
