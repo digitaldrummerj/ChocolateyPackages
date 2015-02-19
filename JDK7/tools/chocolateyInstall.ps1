@@ -1,4 +1,4 @@
-$script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+﻿$script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $common = $(Join-Path $script_path "common.ps1")
 . $common
 

@@ -1,4 +1,4 @@
-$package = 'AndroidStudio'
+﻿$package = 'AndroidStudio'
 $majorVersion = '1.0.1'
 $buildVersion = '135.1641136'
 $extractionPath = "C:/Google"

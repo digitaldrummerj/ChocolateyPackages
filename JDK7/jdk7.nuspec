@@ -3,12 +3,12 @@
     <metadata>
         <id>jdk7</id>
         <version>7.0.72</version>
-        <title>Java Platform (JDK) 7.0.72</title>
+        <title>Java Platform (JDK)</title>
         <authors>Oracle</authors>
         <owners>Justin James</owners>
         <licenseUrl>http://www.oracle.com/technetwork/java/javase/terms/license/index.html</licenseUrl>
         <projectUrl>http://www.java.com/</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/JDK7/jdk7_logo.jpg</iconUrl>
+        <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/JDK7/jdk7_logo.svg</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Java Development Kit.  Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications.
 

@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Android Studio is a new Android development environment based on IntelliJ IDEA. Similar to Eclipse with the ADT Plugin, Android Studio provides integrated Android developer tools for development and debugging. 
 
-On top of the capabilities you expect from IntelliJ, Android Studio offers:
+**On top of the capabilities you expect from IntelliJ, Android Studio offers:**
 
 
 * Gradle-based build support.
@@ -22,14 +22,15 @@ On top of the capabilities you expect from IntelliJ, Android Studio offers:
 * Template-based wizards to create common Android designs and components.
 * A rich layout editor that allows you to drag-and-drop UI components, preview layouts on multiple screen configurations, and much more.
 
-http://blogs.jetbrains.com/idea/2013/05/intellij-idea-and-android-studio-faq/
+**Optional Command Line Parameters**
 
-==================OPTIONAL COMMAND LINE ARGUMENTS ==================
-To pin Android Studio to the taskbar pass in: /PinnedToTaskbar:true
+* To pin Android Studio to the taskbar pass in: /PinnedToTaskbar:true
 
-To create a desktop icon for Android Studio pass in: /AddToDesktop:true
+* To create a desktop icon for Android Studio pass in: /AddToDesktop:true
 
-cinst AndroidStudio -packageParameters "/PinnedToTaskbar:true /AddToDesktop:true"</description>
+
+	
+		cinst AndroidStudio -packageParameters "/PinnedToTaskbar:true /AddToDesktop:true"</description>
         <summary>Android Studio is a new Android development environment based on IntelliJ IDEA.</summary>
         <releaseNotes>http://developer.android.com/tools/revisions/studio.html
 

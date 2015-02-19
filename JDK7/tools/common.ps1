@@ -1,4 +1,4 @@
-$package = 'jdk7'
+ï»¿$package = 'jdk7'
 $build = '14'
 $jdk_version = '7u72' 
 $java_version = "1.7.0_72"
@@ -10,7 +10,7 @@ $env:chocolateyInstallArguments = ""
 
 
 function use64bit() {
-    $is64bitOS = (Get-WmiObject -Class Win32_ComputerSystem).SystemType -match ‘(x64)’
+    $is64bitOS = (Get-WmiObject -Class Win32_ComputerSystem).SystemType -match '(x64)'
     return $is64bitOS
 }
 
@@ -27,15 +27,21 @@ function get-programfilesdir() {
 
 function checkIfInstalled()
 {
-    $installedJreVersion = dir "HKLM:\SOFTWARE\JavaSoft\Java Runtime Environment" | select -expa pschildname -Last 1
-    $installedJdkVersion = dir "HKLM:\SOFTWARE\JavaSoft\Java Development Kit" | select -expa pschildname -Last 1
+    $jdkPath = "HKLM:\SOFTWARE\JavaSoft\Java Development Kit"
+
+    if (Test-Path -Path $jdkPath)
+    {
+        $installedJdkVersion = dir $jdkPath | select -expa pschildname -Last 1
     
-    Write-Debug "Installed JDK Version: $installedJdkVersion"
-    $isInstalled = $installedJdkVersion -eq  $java_version
-    
-    Write-Debug "Jdk IsInstalled: $isInstalled"
-    return $isinstalled
-    
+		Write-Debug "Installed JDK Version: $installedJdkVersion"
+		$isInstalled = $installedJdkVersion -eq  $java_version	
+		
+		Write-Debug "Jdk IsInstalled: $isInstalled"
+		return $isinstalled
+    }
+	
+	Write-Debug "Jdk Is Not Installed"
+	return $false    
 }
 
 function download-from-oracle($url, $output_filename) {

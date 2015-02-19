@@ -1,4 +1,4 @@
-Function GetArguments ([string]$packageArgs)
+ï»¿Function GetArguments ([string]$packageArgs)
 {
 	$arguments = @{};
 
@@ -7,7 +7,7 @@ Function GetArguments ([string]$packageArgs)
     $addtodesktop = "true";
 
 
-    # Now, let’s parse the packageParameters using good old regular expression
+    # Now, let's parse the packageParameters using good old regular expression
     $MATCH_PATTERN = "/([a-zA-Z]+):([`"'])?([a-zA-Z0-9- _]+)([`"'])?"
     $PARAMATER_NAME_INDEX = 1
     $VALUE_INDEX = 3

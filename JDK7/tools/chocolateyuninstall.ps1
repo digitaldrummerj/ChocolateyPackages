@@ -1,4 +1,4 @@
-$script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+﻿$script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $common = $(Join-Path $script_path "common.ps1")
 . $common
 
@@ -37,12 +37,12 @@ function Uninstall-JDK-And-JRE {
     if ($use64bit) {
     # /qn
         # HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{64A3A4F4-B792-11D6-A78A-00B0D0170720}
-        $jdk = " /x {64A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"       
+        $jdk = " /qn /x {64A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"       
         # HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{26A24AE4-039D-4CA4-87B4-2F06417072FF}
-        $jre = " /x {26A24AE4-039D-4CA4-87B4-2F064" + $uninstall_id + "FF}"   
+        $jre = " /qn /x {26A24AE4-039D-4CA4-87B4-2F064" + $uninstall_id + "FF}"   
     } else {
-        $jdk = " /x {32A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"
-        $jre = " /x {26A24AE4-039D-4CA4-87B4-2F832" + $uninstall_id + "FF}"   
+        $jdk = " /qn /x {32A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "0}"
+        $jre = " /qn /x {26A24AE4-039D-4CA4-87B4-2F832" + $uninstall_id + "FF}"   
     }
      Write-Host "Uninstalling JDK"
      Start-ChocolateyProcessAsAdmin $jdk 'msiexec'

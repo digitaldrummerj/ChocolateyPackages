@@ -1,4 +1,4 @@
-$package = 'AndroidStudio'
+﻿$package = 'AndroidStudio'
 $extractionPath = "C:/Google"
 
 try
