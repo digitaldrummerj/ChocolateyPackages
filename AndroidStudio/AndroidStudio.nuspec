@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>AndroidStudio</id>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
         <title>Android Studio</title>
         <authors>Google</authors>
         <owners>Justin James</owners>
@@ -22,21 +22,23 @@
 * Template-based wizards to create common Android designs and components.
 * A rich layout editor that allows you to drag-and-drop UI components, preview layouts on multiple screen configurations, and much more.
 
-**Optional Command Line Parameters**
+#### Package Parameters
+The following package parameters can be set:
 
-* To pin Android Studio to the taskbar pass in: /PinnedToTaskbar:true
-
-* To create a desktop icon for Android Studio pass in: /AddToDesktop:true
-
-
-	
-		cinst AndroidStudio -packageParameters "/PinnedToTaskbar:true /AddToDesktop:true"</description>
+* `/PinnedToTaskbar` - this put a shortcut on your taskbar to Android Studio.
+* `/AddToDesktop` - this puts a shortcut on your desktop to Android Studio.
+ 
+These parameters can be passed to the installer with the use of `-params`.
+For example: `-params '"/PinnedToTaskbar:true /AddToDesktop:true"'`.
+</description>
         <summary>Android Studio is a new Android development environment based on IntelliJ IDEA.</summary>
         <releaseNotes>http://developer.android.com/tools/revisions/studio.html
 
-* Upgraded to Android Studio 1.0.1.
+* Upgraded to Android Studio 1.1.0.
 * Added ability to pin Android Studio to taskbar
-* Added ability to create a desktop shortcut</releaseNotes>
+* Added ability to create a desktop shortcut
+* Switched to Native Installer instead of zip file
+</releaseNotes>
         <tags>google android jetbrains IntelliJ IDEA androidstudio</tags>
         <dependencies>
             <dependency id="android-sdk" version="23.0.2" />

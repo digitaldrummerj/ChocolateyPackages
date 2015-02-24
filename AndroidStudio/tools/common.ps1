@@ -1,4 +1,29 @@
-﻿Function GetArguments ([string]$packageArgs)
+﻿$package = 'AndroidStudio'
+$majorVersion = '1.1.0'
+$buildVersion = '135.1740770'
+$extractionPath =  Join-Path  $env:programfiles 'Android'
+$installDir = Join-Path $extractionPath 'Android Studio'
+
+function use64bit() {
+	return Get-ProcessorBits 64;
+}
+
+function GetStudioExe(){
+	if(use64bit) {
+		$studioExe = (gci "${installDir}/bin/studio64.exe").FullName | sort -Descending | Select -first 1
+	} else {
+		$studioExe = (gci "${installDir}/bin/studio.exe").FullName | sort -Descending | Select -first 1
+	}
+	
+	return $studioExe
+}
+
+function GetUninstallFile() {
+	$uninstallExe = (gci "${installDir}/uninstall.exe").FullName | sort -Descending | Select -first 1
+	return $uninstallExe
+}
+
+function GetArguments ([string]$packageArgs)
 {
 	$arguments = @{};
 
@@ -8,18 +33,24 @@
 
 
     # Now, let's parse the packageParameters using good old regular expression
-    $MATCH_PATTERN = "/([a-zA-Z]+):([`"'])?([a-zA-Z0-9- _]+)([`"'])?"
-    $PARAMATER_NAME_INDEX = 1
-    $VALUE_INDEX = 3
+     $match_pattern = "\/(?<option>([a-zA-Z]+)):(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
+      $option_name = 'option'
+      $value_name = 'value'
 
-    if($packageArgs -match $MATCH_PATTERN ){
-        $results = $packageArgs | Select-String $MATCH_PATTERN -AllMatches 
-        $results.matches | % { 
+
+    if ($packageParameters -match $match_pattern ){
+          $results = $packageParameters | Select-String $match_pattern -AllMatches
+          $results.matches | % {
             $arguments.Add(
-                $_.Groups[$PARAMATER_NAME_INDEX].Value.Trim().ToLower(),
-                $_.Groups[$VALUE_INDEX].Value.Trim()) 
+                $_.Groups[$option_name].Value.Trim(),
+                $_.Groups[$value_name].Value.Trim())
         }
-    }     
+      }
+      else
+      {
+          # Throw "Package Parameters were found but were invalid (REGEX Failure)"
+		  Write-Host "Failed to parse package packageParameters"
+      }
 
     if($arguments.ContainsKey("pinnedtotaskbar")) {
         $pinnedtotaskbar = $arguments["pinnedtotaskbar"];
