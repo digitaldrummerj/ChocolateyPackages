@@ -1,9 +1,8 @@
 ﻿$package = 'jdk7'
-$build = '14'
-$jdk_version = '7u72' 
-$java_version = "1.7.0_72"
-$uninstall_id = "17072" 
-$java_home = get-java-home
+$build = '13'
+$jdk_version = '7u76' 
+$java_version = "1.7.0_76"
+$uninstall_id = "17076" 
 
 # Check if OS is 32 bit or 64 Bit
 function use64bit() {

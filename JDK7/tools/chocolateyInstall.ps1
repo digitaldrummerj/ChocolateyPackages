@@ -2,6 +2,7 @@
 $env:chocolateyInstallArguments = ""
 
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+
 $common = $(Join-Path $script_path "common.ps1")
 . $common
 
@@ -19,6 +20,7 @@ try {
 	# Download JDK file and store locally
 	$arch = get-arch
     $jdk_file = download-jdk
+	$java_home = get-java-home
 
 	# Install JDK
     Write-Host "Installing JDK $jdk_version($arch) to $java_home"

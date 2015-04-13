@@ -2,19 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>jdk7</id>
-        <version>7.0.72</version>
+        <version>7.0.76</version>
         <title>Java Platform (JDK)</title>
         <authors>Oracle</authors>
         <owners>Justin James</owners>
         <licenseUrl>http://www.oracle.com/technetwork/java/javase/terms/license/index.html</licenseUrl>
-        <projectUrl>http://www.java.com/</projectUrl>
+        <projectUrl>http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html</projectUrl>
         <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/JDK7/jdk7_logo.svg</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Java Development Kit.  Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications.
 
 http://www.oracle.com/technetwork/java/javase/downloads/index.html</description>
         <summary>Java Development Kit.  Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications.</summary>
-        <releaseNotes>http://www.oracle.com/technetwork/java/javase/7u72-relnotes-2296190.html</releaseNotes>
+        <releaseNotes>http://www.oracle.com/technetwork/java/javase/7u76-relnotes-2389087.html</releaseNotes>
         <tags>java jdk jre debugger</tags>
     </metadata>
     <files>
