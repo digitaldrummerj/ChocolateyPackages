@@ -1,2 +1,2 @@
 # ChocolateyPackages
-Chocolatey Packages that I maintain
+Chocolatey Packages maintained by digitaldrummerj (fork)

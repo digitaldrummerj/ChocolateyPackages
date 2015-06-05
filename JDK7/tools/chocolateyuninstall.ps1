@@ -77,7 +77,6 @@ try {
 	Write-Host "Completed Making Machine Environment Variable 'JAVA_HOME' blank"
   }
   
-  Write-ChocolateySuccess "$package"
 } catch {
       if ($_.Exception.InnerException) {
         $msg = $_.Exception.InnerException.Message

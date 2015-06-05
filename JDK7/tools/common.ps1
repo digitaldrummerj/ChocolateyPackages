@@ -1,8 +1,8 @@
 ﻿$package = 'jdk7'
-$build = '13'
-$jdk_version = '7u76' 
-$java_version = "1.7.0_76"
-$uninstall_id = "17076" 
+$build = '15'
+$jdk_version = '7u79' 
+$java_version = "1.7.0_79"
+$uninstall_id = "17079" 
 
 # Check if OS is 32 bit or 64 Bit
 function use64bit() {
@@ -75,7 +75,7 @@ function download-jdk() {
 # Figure out where the JAVA_HOME directory is
 function get-java-home() {
     $program_files = get-programfilesdir
-    return Join-Path $program_files "Java\jdk$java_version" #jdk1.6.0_17
+    return Join-Path $program_files "Java\jdk$java_version"
 }
 
 # Figure out where the JAVA_HOME bin directory is

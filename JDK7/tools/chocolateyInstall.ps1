@@ -13,7 +13,6 @@ try {
     if (checkIfInstalled)
     {
         Write-Host "JDK $java_version already installed."
-        Write-ChocolateySuccess $package
         return
     } 
 
@@ -47,8 +46,6 @@ try {
         Install-ChocolateyEnvironmentVariable 'JAVA_HOME' $java_home 'Machine'
 		Write-Host "Completed Adding JAVA_HOME Environment Variable"    
     }
-
-    Write-ChocolateySuccess $package
 	
     $env:chocolateyInstallArguments = $customArgs 
 } catch {
