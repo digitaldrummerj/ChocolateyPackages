@@ -8,7 +8,7 @@
         Url = "https://dl.google.com/dl/android/studio/install/$majorVersion/android-studio-ide-$buildVersion-windows.exe"
 		InstallerType = "exe";
 		SilentArgs = "/S";
-		Checksum = "5ea77661cd2300cea09e8e34f4a2219a0813911f";
+		Checksum = "d70fb49d03db9dded19c891a92452601e39272f4";
 		CheckSumType = "sha1";
 		validExitCodes = @(0,1223);
     }
