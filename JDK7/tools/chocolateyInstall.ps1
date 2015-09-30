@@ -42,7 +42,8 @@ try {
 	# Add JAVA_HOME environment variable if it doesn't exist
 
     if ([Environment]::GetEnvironmentVariable('JAVA_HOME','Machine') -eq $null) {
-		Write-Host "Adding JAVA_HOME Environment Variable"    
+		Write-Host "Adding JAVA_HOME Environment Variable"  
+		$java_home = get-java-home
         Install-ChocolateyEnvironmentVariable 'JAVA_HOME' $java_home 'Machine'
 		Write-Host "Completed Adding JAVA_HOME Environment Variable"    
     }
