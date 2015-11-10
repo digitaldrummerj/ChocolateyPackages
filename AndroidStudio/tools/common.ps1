@@ -1,6 +1,6 @@
 ﻿$package = 'AndroidStudio'
-$majorVersion = '1.3.1.0'
-$buildVersion = '141.2135290'
+$majorVersion = '1.4.0.10'
+$buildVersion = '141.2288178'
 $extractionPath =  Join-Path  $env:programfiles 'Android'
 $installDir = Join-Path $extractionPath 'Android Studio'
 
@@ -28,39 +28,28 @@ function GetArguments ([string]$packageArgs)
 {
 	$arguments = @{};
 
-    # Default the values
-    $pinnedtotaskbar = "true";
-    $addtodesktop = "true";
-
-
-    # Now, let's parse the packageParameters using good old regular expression
-     $match_pattern = "\/(?<option>([a-zA-Z]+)):(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
-      $option_name = 'option'
-      $value_name = 'value'
-
-
-    if ($packageParameters -match $match_pattern ){
-          $results = $packageParameters | Select-String $match_pattern -AllMatches
-          $results.matches | % {
-            $arguments.Add(
-                $_.Groups[$option_name].Value.Trim(),
-                $_.Groups[$value_name].Value.Trim())
-        }
-      }
-      else
-      {
-          # Throw "Package Parameters were found but were invalid (REGEX Failure)"
-		  Write-Host "Failed to parse package packageParameters"
-      }
-
-    if($arguments.ContainsKey("pinnedtotaskbar")) {
-        $pinnedtotaskbar = $arguments["pinnedtotaskbar"];
-    }  
-
-    if($arguments.ContainsKey("addtodesktop")) {
-        $addtodesktop = $arguments["addtodesktop"];
-    }
-
+	if ($packageParameters) {
+		# Now, let's parse the packageParameters using good old regular expression
+		$match_pattern = "\/(?<option>([a-zA-Z]+)):(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
+		$option_name = 'option'
+		$value_name = 'value'
+	
+	
+		if ($packageParameters -match $match_pattern ){
+			$results = $packageParameters | Select-String $match_pattern -AllMatches
+			$results.matches | % {
+				$arguments.Add(
+					$_.Groups[$option_name].Value.Trim(),
+					$_.Groups[$value_name].Value.Trim())
+			}
+		}
+		else
+		{
+			# Throw "Package Parameters were found but were invalid (REGEX Failure)"
+			Write-Host "Failed to parse package packageParameters"
+		}	
+	}
+	
     New-Object PSObject -Property $arguments
 }
 
