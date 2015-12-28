@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>AndroidStudio</id>
-        <version>1.4.0.10</version>
+        <version>1.4.1.0</version>
         <title>Android Studio</title>
         <authors>Google</authors>
         <owners>Justin James</owners>
@@ -25,7 +25,7 @@ For example: `-params '"/PinnedToTaskbar:true /AddToDesktop:true"'`.
         <releaseNotes>http://developer.android.com/tools/revisions/studio.html</releaseNotes>
         <tags>google android jetbrains IntelliJ IDEA androidstudio</tags>
         <dependencies>
-            <dependency id="android-sdk" version="23.0.2" />
+            <dependency id="android-sdk" />
             <dependency id="jdk7" version="7.0.79" />
         </dependencies>
     </metadata>

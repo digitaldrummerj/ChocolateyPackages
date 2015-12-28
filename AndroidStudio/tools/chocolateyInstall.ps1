@@ -5,11 +5,10 @@
 
 $params = @{
 	PackageName = $package;
-
 	Url = "https://dl.google.com/dl/android/studio/install/$majorVersion/android-studio-ide-$buildVersion-windows.exe"
 	InstallerType = "exe";
 	SilentArgs = "/S";
-	Checksum = "82d0d9c78ec23834956f941a07821be347fcb7bf";
+	Checksum = "227160920052916e538512f8ccbf49296bb2b1f2";
 	CheckSumType = "sha1";
 	validExitCodes = @(0,1223);
 }
