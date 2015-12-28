@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>AndroidStudio</id>
-        <version>1.4.1.0</version>
+        <version>1.5.0.4</version>
         <title>Android Studio</title>
         <authors>Google</authors>
         <owners>Justin James</owners>
@@ -23,11 +23,12 @@ For example: `-params '"/PinnedToTaskbar:true /AddToDesktop:true"'`.
 </description>
         <summary>Android Studio is the official IDE for Android development.</summary>
         <releaseNotes>http://developer.android.com/tools/revisions/studio.html</releaseNotes>
-        <tags>google android jetbrains IntelliJ IDEA androidstudio</tags>
+        <tags>google android jetbrains IntelliJ IDEA androidstudio admin</tags>
         <dependencies>
             <dependency id="android-sdk" />
             <dependency id="jdk7" version="7.0.79" />
         </dependencies>
+        <packageSourceUrl>https://github.com/digitaldrummerj-chocolatey/JetBrains-Chocolatey</packageSourceUrl>
     </metadata>
     <files>
         <file src="tools\chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />

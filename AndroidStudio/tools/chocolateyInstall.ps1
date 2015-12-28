@@ -22,7 +22,7 @@ $studioExe = GetStudioExe
 if ($settings.addtodesktop -eq "true")
 {
 	Write-Host "AddToDesktop Value: " $settings.addtodesktop
-	Install-ChocolateyDesktopLink $studioExe
+	Install-ChocolateyShortcut $studioExe
 }
 
 if ($settings.pinnedtotaskbar -eq "true")
