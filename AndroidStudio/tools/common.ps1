@@ -1,7 +1,7 @@
 ﻿$package = 'AndroidStudio'
-$majorVersion = '1.5.1.0'
-$buildVersion = '141.2456560'
-$checksum = '8d016b90bf04ebac6ce548b1976b0c8a4f46b5f9'
+$majorVersion = '2.0.0.20'
+$buildVersion = '143.2739321'
+$checksum = '3e8c25bd7b7f3aa326f7b2a349c4d67c550d13ac'
 $extractionPath =  Join-Path  $env:programfiles 'Android'
 $installDir = Join-Path $extractionPath 'Android Studio'
 
