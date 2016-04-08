@@ -15,6 +15,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://blogs.adobe.com/typblography/files/2012/09/SourceCodeSplash.png</iconUrl>
     <releaseNotes>https://github.com/adobe-fonts/source-code-pro/releases</releaseNotes>
+    <packageSourceUrl>https://github.com/digitaldrummerj-chocolatey/ChocolateyPackages</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
