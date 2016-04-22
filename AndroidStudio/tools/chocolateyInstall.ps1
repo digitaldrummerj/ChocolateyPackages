@@ -2,8 +2,8 @@
 # Common Functions and Config
 . (Join-Path $(Split-Path -parent $MyInvocation.MyCommand.Definition) 'Common.ps1')
 
-$uninstallExe = GetUninstallFile
-if (Test-Path ($uninstallExe)) {
+if (Test-Path ($installDir)) {
+    $uninstallExe = GetUninstallFile
     
     $params = @{
         PackageName = $package;
