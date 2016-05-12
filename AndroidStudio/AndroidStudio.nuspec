@@ -20,6 +20,9 @@ The following package parameters can be set:
  
 These parameters can be passed to the installer with the use of `-params`.
 For example: `-params '"/PinnedToTaskbar:true /AddToDesktop:true"'`.
+
+**Note:** if you are using the beta version of Chocolatey and don't already have jdk8 installed, this package will fail to install properly until jdk8 is installed.
+
 </description>
         <summary>Android Studio is the official IDE for Android development.</summary>
         <releaseNotes>http://developer.android.com/tools/revisions/studio.html</releaseNotes>
