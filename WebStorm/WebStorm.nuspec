@@ -17,7 +17,7 @@
     <tags>WebStorm JetBrains developer productivity IDE HTML CSS JavaScript trial admin</tags>
     <dependencies>
     </dependencies>
-    <packageSourceUrl>https://github.com/digitaldrummerj/JetBrains-Chocolatey</packageSourceUrl>
+    <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
   </metadata>
   <files>
     <file src="chocolateyInstall.ps1" target="tools" />
