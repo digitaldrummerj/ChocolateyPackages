@@ -20,6 +20,7 @@
     <dependencies>
       <dependency id="jdk8"  />
     </dependencies>
+    <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
     <releaseNotes>https://developer.android.com/studio/releases/sdk-tools.html</releaseNotes>
   </metadata>
   <files>
