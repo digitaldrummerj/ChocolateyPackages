@@ -12,7 +12,7 @@
       **WARNING:** This package fails with the beta version of Chocolatey unless JDK8 is installed first.  See [https://github.com/chocolatey/choco/issues/719](https://github.com/chocolatey/choco/issues/719) for status of issue.
     </description>
     <projectUrl>https://developer.android.com/studio/index.html</projectUrl>
-    <tags>android sdk google</tags>
+    <tags>android sdk google admin</tags>
     <copyright>Google</copyright>
     <licenseUrl>https://developer.android.com/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
