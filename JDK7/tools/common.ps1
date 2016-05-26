@@ -54,6 +54,7 @@ function download-from-oracle($url, $output_filename) {
         $client.Proxy = [System.Net.WebRequest]::DefaultWebProxy
         $client.Headers.Add('Cookie', 'gpw_e24=http://www.oracle.com; oraclelicense=accept-securebackup-cookie')
         $client.DownloadFile($url, $output_filename)
+        [System.Net.ServicePointManager]::ServerCertificateValidationCallback = $null 
         
         Write-Host  "Completed Downloading JDK from $url"
     }  
