@@ -55,35 +55,22 @@ function Uninstall-JDK-And-JRE {
      Write-Host "Completed Uninstalling JRE"
 }
 
-try {  
+# Uninstall JRE and JDK
+Uninstall-JDK-And-JRE
 
-  # Uninstall JRE and JDK
-  Uninstall-JDK-And-JRE
+# Remove java-bin from the Environment path
+$java_bin = get-java-bin  
+Uninstall-ChocolateyPath $java_bin 'Machine'
 
-  # Remove java-bin from the Environment path
-  $java_bin = get-java-bin  
-  Uninstall-ChocolateyPath $java_bin 'Machine'
-  
-  # If CLASSPATH environment variable exist, make it null
-  if ([Environment]::GetEnvironmentVariable('CLASSPATH','Machine') -eq '.;') {
-        Write-Host "Uninstalled Machine Environment Variable 'CLASSPATH'"
-        Install-ChocolateyEnvironmentVariable 'CLASSPATH' $null 'Machine'
-  }
-  
-  # If JAVA_HOME environment variable equal to this version of the JDK, make it null
-  if ([Environment]::GetEnvironmentVariable('JAVA_HOME','Machine') -eq "$java_home") {
-	Write-Host "Making Machine Environment Variable 'JAVA_HOME' blank"
-	Install-ChocolateyEnvironmentVariable 'JAVA_HOME' $null 'Machine'
-	Write-Host "Completed Making Machine Environment Variable 'JAVA_HOME' blank"
-  }
-  
-} catch {
-      if ($_.Exception.InnerException) {
-        $msg = $_.Exception.InnerException.Message
-    } else {
-        $msg = $_.Exception.Message
-    }
-    
-    Write-ChocolateyFailure $package "$msg"
-    throw 
+# If CLASSPATH environment variable exist, make it null
+if ([Environment]::GetEnvironmentVariable('CLASSPATH','Machine') -eq '.;') {
+  Write-Host "Uninstalled Machine Environment Variable 'CLASSPATH'"
+  Install-ChocolateyEnvironmentVariable 'CLASSPATH' $null 'Machine'
+}
+
+# If JAVA_HOME environment variable equal to this version of the JDK, make it null
+if ([Environment]::GetEnvironmentVariable('JAVA_HOME','Machine') -eq "$java_home") {
+  Write-Host "Making Machine Environment Variable 'JAVA_HOME' blank"
+  Install-ChocolateyEnvironmentVariable 'JAVA_HOME' $null 'Machine'
+  Write-Host "Completed Making Machine Environment Variable 'JAVA_HOME' blank"
 }

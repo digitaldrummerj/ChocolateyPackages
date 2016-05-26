@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>jdk7</id>
-        <version>7.0.79</version>
+        <version>7.0.79.2</version>
         <title>Java Platform (JDK)</title>
         <authors>Oracle</authors>
         <owners>Justin James</owners>
