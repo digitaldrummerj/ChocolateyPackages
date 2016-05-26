@@ -15,7 +15,7 @@
 http://www.oracle.com/technetwork/java/javase/downloads/index.html</description>
         <summary>Java Development Kit.  Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications.</summary>
         <releaseNotes>http://www.oracle.com/technetwork/java/javase/7u79-relnotes-2494161.html</releaseNotes>
-        <tags>java jdk jre debugger</tags>
+        <tags>java jdk jre debugger admin</tags>
         <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
     </metadata>
     <files>
