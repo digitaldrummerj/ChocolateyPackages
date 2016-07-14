@@ -1,5 +1,5 @@
 $installerType = 'EXE' 
-$url = "http://download.jetbrains.com/webstorm/WebStorm-2016.1.2.exe" 
+$url = "https://download.jetbrains.com/webstorm/WebStorm-2016.2.exe" 
 $url64 = $url 
 $silentArgs = '/S' 
 $validExitCodes = @(0) 
