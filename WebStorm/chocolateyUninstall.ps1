@@ -2,7 +2,7 @@ $extractionPath = (${env:ProgramFiles(x86)}, ${env:ProgramFiles} -ne $null)[0]
 
 $installDir = Join-Path $extractionPath 'JetBrains'
 
-$installVersionDir  = Join-Path $installDir  "WebStorm 2016.1"
+$installVersionDir  = Join-Path $installDir  "WebStorm 2016.2"
 
 if (Test-Path ($installVersionDir)) {
 
