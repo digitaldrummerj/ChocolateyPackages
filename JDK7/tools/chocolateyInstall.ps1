@@ -16,10 +16,12 @@ if (checkIfInstalled)
 $arch = get-arch
 $jdk_file = download-jdk
 $java_home = get-java-home
+$checksum = get-checksum
+$checksumType = 'sha256';
 
 # Install JDK
 Write-Host "Installing JDK $jdk_version($arch) to $java_home"
-Install-ChocolateyInstallPackage $package 'exe' "/s" $jdk_file          
+Install-ChocolateyInstallPackage $package 'exe' "/s" $jdk_file -ChecksumType "$checksumType" -Checksum "$checksum"          
 Write-Host "Completed Installing JDK $jdk_version($arch) to $java_home"
 
 # Add java bin folder to Path

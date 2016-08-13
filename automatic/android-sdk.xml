@@ -92,7 +92,7 @@
             <VariableType>StartEnd</VariableType>
             <Regex />
             <Url>https://developer.android.com/studio/index.html</Url>
-            <StartText>href="//dl.google.com/android/installer_r</StartText>
+            <StartText>href="https://dl.google.com/android/installer_r</StartText>
             <EndText>-windows.exe"</EndText>
             <TextualContent />
             <Name>version</Name>

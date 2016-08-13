@@ -15,9 +15,6 @@ if (Test-Path ($installDir)) {
     Uninstall-ChocolateyPackage @params
 }
 
-# Url = "https://dl.google.com/dl/android/studio/install/$majorVersion/android-studio-ide-$buildVersion-windows.exe"
-# Checksum = "$checksum";
-# CheckSumType = "sha1";
 
 $params = @{
 	PackageName = $package;
@@ -25,6 +22,8 @@ $params = @{
 	InstallerType = "exe";
 	SilentArgs = "/S";	
 	validExitCodes = @(0,1223);
+	Checksum = '{checksum}'
+	ChecksumType = 'sha256'
 }
 
 Install-ChocolateyPackage @params

@@ -4,15 +4,16 @@ function Get-CurrentDirectory
   [IO.Path]::GetDirectoryName((Get-Content function:$thisName).File)
 }
 
-$package = 'SourceCodePro'
-
 $fontHelpersPath = (Join-Path (Get-CurrentDirectory) 'FontHelpers.ps1')
 . $fontHelpersPath
 
-$fontUrl = 'https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip'
+$fontUrl = 'https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip'
+$checksumType = 'sha256';
+$checksum = 'DA2AC159497D31B0C6D9DAA8FC390FB8252E75B4A9805ACE6A2C9CCCAED4932E';
+
 $destination = Join-Path $Env:Temp 'SourceCodePro'
 
-Install-ChocolateyZipPackage -url $fontUrl -unzipLocation $destination
+Install-ChocolateyZipPackage -PackageName 'SourceCodePro' -url $fontUrl -unzipLocation $destination -ChecksumType "$checksumType" -Checksum "$checksum"
 
 $shell = New-Object -ComObject Shell.Application
 $fontsFolder = $shell.Namespace(0x14)

@@ -3,6 +3,9 @@ $build = '15'
 $jdk_version = '7u79' 
 $java_version = "1.7.0_79"
 $uninstall_id = "17079" 
+$checksumX64  = '80B1452C808691DC63945926C52156C8AFE7EBCFA3747093FD296F0A3F1CFBCC'
+$checksumX32 = '658643EF2775E015449409B844AF4FDB087F51921B61E5DD02DAC62A43C956F2'
+$checksumType = 'sha256'
 
 # Check if OS is 32 bit or 64 Bit
 function use64bit() {
@@ -92,5 +95,13 @@ function get-arch() {
         return "x64"
     } else {
         return "i586"
+    }
+}
+
+function get-checksum() {
+    if (use64bit) {
+        return $checksumX64
+    } else {
+        return $checksumX32
     }
 }

@@ -3,13 +3,11 @@
   <metadata>
     <id>{{PackageName}}</id>
     <title>Android SDK</title>
-    <version>{{PackageVersion}}</version>
+    <version>{{Version}}</version>
     <authors>Google</authors>
     <owners>Justin James</owners>
     <summary>The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.</summary>
     <description>The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.
-    
-      **WARNING:** This package fails with the beta version of Chocolatey unless JDK8 is installed first.  See [https://github.com/chocolatey/choco/issues/719](https://github.com/chocolatey/choco/issues/719) for status of issue.
     </description>
     <projectUrl>https://developer.android.com/studio/index.html</projectUrl>
     <tags>android sdk google admin</tags>
@@ -21,7 +19,13 @@
       <dependency id="jdk8"  />
     </dependencies>
     <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
-    <releaseNotes>https://developer.android.com/studio/releases/sdk-tools.html</releaseNotes>
+    <releaseNotes>Release Notes: [https://developer.android.com/studio/releases/sdk-tools.html](https://developer.android.com/studio/releases/sdk-tools.html)
+    
+### Chocolatey Package Change Log:
+
+* 8-12-2016: Added checksums
+
+    </releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
