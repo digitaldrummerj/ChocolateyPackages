@@ -22,8 +22,8 @@ $params = @{
 	InstallerType = "exe";
 	SilentArgs = "/S";	
 	validExitCodes = @(0,1223);
-	Checksum = '{checksum}'
-	ChecksumType = 'sha256'
+	Checksum = '43f84de7e61f37880a126c3d567b7fa6cb90c90e' #'{checksum}'
+	ChecksumType = 'sha1'
 }
 
 Install-ChocolateyPackage @params

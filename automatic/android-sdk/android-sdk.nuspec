@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>{{PackageName}}</id>
+    <id>android-sdk</id>
     <title>Android SDK</title>
-    <version>{{Version}}</version>
+    <version>24.4.1.3</version>
     <authors>Google</authors>
     <owners>Justin James</owners>
     <summary>The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.</summary>
@@ -23,8 +23,8 @@
     
 ### Chocolatey Package Change Log:
 
-* 8-12-2016: Added checksums
-
+* Fixed issue with the environment variable for ANDROID_HOME being incorrect
+* Fixed uninstall that was missing function for Uninstall-ChocolateyPath
     </releaseNotes>
   </metadata>
   <files>
