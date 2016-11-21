@@ -1,10 +1,9 @@
 ﻿$package = 'AndroidStudio'
-$majorVersion = '2.1.1.0'
-$buildVersion = '143.2821654'
-$checksum = 'd8cb3968814b6155f4effe727baf23b18b9f8360'
+$majorVersion = '2.2.2.0'
+$buildVersion = '145.3360264'
+$checksum = '54c65afe143e87ef40decc720854a9c1f30417d3'
 $extractionPath =  Join-Path  $env:programfiles 'Android'
 $installDir = Join-Path $extractionPath 'Android Studio'
-
 function use64bit() {
 	return Get-ProcessorBits 64;
 }
