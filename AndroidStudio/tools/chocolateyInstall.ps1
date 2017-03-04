@@ -24,7 +24,7 @@ $params = @{
 	SilentArgs = "/S";	
 	validExitCodes = @(0,1223);
 	Checksum = "$checksum"
-	ChecksumType = 'sha1'
+	ChecksumType = 'sha256'
 }
 
 Install-ChocolateyPackage @params

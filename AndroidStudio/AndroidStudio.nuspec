@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>AndroidStudio</id>
-        <version>2.2.2.0</version>
+        <version>2.3.0.8</version>
         <title>Android Studio</title>
         <authors>Google</authors>
         <owners>Justin James</owners>
@@ -20,16 +20,12 @@ The following package parameters can be set:
  
 These parameters can be passed to the installer with the use of `-params`.
 For example: `-params '"/PinnedToTaskbar:true /AddToDesktop:true"'`.
-
-**Note:** if you are using the beta version of Chocolatey and don't already have jdk8 installed, this package will fail to install properly until jdk8 is installed.
-
 </description>
         <summary>Android Studio is the official IDE for Android development.</summary>
         <releaseNotes>http://developer.android.com/tools/revisions/studio.html</releaseNotes>
         <tags>google android androidstudio admin</tags>
         <dependencies>
             <dependency id="android-sdk" />
-            <dependency id="jdk8" />
         </dependencies>
         <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
     </metadata>
