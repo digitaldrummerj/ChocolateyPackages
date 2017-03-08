@@ -1,9 +1,9 @@
 $installerType = 'EXE' 
-$url = "https://download.jetbrains.com/webstorm/WebStorm-2016.3.3.exe" 
+$url = "https://download.jetbrains.com/webstorm/WebStorm-2016.3.4.exe" 
 $url64 = $url 
 $silentArgs = '/S' 
 $validExitCodes = @(0) 
 $checksumType = 'sha256';
-$checksum = '48b866ac9e2d8860b1c60b4a6da77e8b725467f0c49ec9c9a765429718ea582e';
+$checksum = '962f0bbf94a76dc79dd2d9c1b898abe9f9bb3201cb71cdb25d6731290d1955b9';
 
 Install-ChocolateyPackage "$packageName" "$installerType" "$silentArgs" "$url" "$url64"  -validExitCodes $validExitCodes -Checksum64 "$checksum" -ChecksumType64 $checksumType -ChecksumType "$checksumType" -Checksum "$checksum"  
