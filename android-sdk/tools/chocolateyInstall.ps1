@@ -1,10 +1,10 @@
-﻿$downUrl = 'https://dl.google.com/android/repository/tools_r25.2.3-windows.zip'
-$checksum = '23d5686ffe489e5a1af95253b153ce9d6f933e5dbabe14c494631234697a0e08'
-$checksumType = 'sha256'
-$destination = "${Env:ProgramFiles}\Android\android-sdk"
+﻿. (Join-Path $(Split-Path -parent $MyInvocation.MyCommand.Definition) 'Common.ps1')
 
-Install-ChocolateyZipPackage -PackageName 'android-sdk' -url $downUrl -unzipLocation $destination -ChecksumType "$checksumType" -Checksum "$checksum"
+Install-ChocolateyZipPackage -PackageName $packageName -url $downUrl -unzipLocation $destination -ChecksumType "$checksumType" -Checksum "$checksum"
  
-Install-ChocolateyPath "${destination}\tools" 'Machine'
-Install-ChocolateyPath "${destination}\platform-tools" 'Machine'
-Install-ChocolateyEnvironmentVariable 'ANDROID_HOME' "${destination}" 'Machine'
+Install-ChocolateyPath $envToolsPath  'Machine'
+Install-ChocolateyPath $envPlatformsPath 'Machine'
+Install-ChocolateyEnvironmentVariable 'ANDROID_HOME' ${envPath} 'Machine'
+refreshenv
+
+echo yes | android update sdk --filter tools,platform-tools --all --no-ui
