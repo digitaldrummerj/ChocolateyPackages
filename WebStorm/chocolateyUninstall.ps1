@@ -1,11 +1,12 @@
+$packageName = 'Webstorm'
+
 $extractionPath = (${env:ProgramFiles(x86)}, ${env:ProgramFiles} -ne $null)[0]
 
 $installDir = Join-Path $extractionPath 'JetBrains'
 
-$installVersionDir  = Join-Path $installDir  "WebStorm 2016.3.4"
+$installVersionDir  = Join-Path $installDir  'WebStorm 2016.3.4'
 
 if (Test-Path ("${installVersionDir}\bin\Uninstall.exe")) {
-
 	$uninstallExe = (gci "${installVersionDir}\bin\Uninstall.exe").FullName | sort -Descending | Select -first 1
 
 	$params = @{
@@ -16,4 +17,11 @@ if (Test-Path ("${installVersionDir}\bin\Uninstall.exe")) {
 	}   
 
 	Uninstall-ChocolateyPackage @params
+
+	if (Test-Path ("${installVersionDir}\bin\Uninstall.exe")) {		
+		$directoryInfo = Get-ChildItem $installVersionDir | Measure-Object
+    	if ($directoryInfo.count -eq 1) {
+      		Remove-Item "${installVersionDir}" -recurse -force -confirm:$false
+    	}
+	}
 }
