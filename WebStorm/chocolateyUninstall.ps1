@@ -4,7 +4,7 @@ $extractionPath = (${env:ProgramFiles(x86)}, ${env:ProgramFiles} -ne $null)[0]
 
 $installDir = Join-Path $extractionPath 'JetBrains'
 
-$installVersionDir  = Join-Path $installDir  'WebStorm 2016.3.4'
+$installVersionDir  = Join-Path $installDir  'WebStorm 2017.1'
 
 if (Test-Path ("${installVersionDir}\bin\Uninstall.exe")) {
 	$uninstallExe = (gci "${installVersionDir}\bin\Uninstall.exe").FullName | sort -Descending | Select -first 1
