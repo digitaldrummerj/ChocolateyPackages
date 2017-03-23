@@ -2,10 +2,14 @@
 
 
 if (Test-Path ($destination)) {
+  adb kill-server
+  
   Uninstall-ChocolateyZipPackage $packageName $fileName
   Uninstall-ChocolateyPath $envToolsPath 'Machine'
   Uninstall-ChocolateyPath $envPlatformsPath 'Machine'
   Uninstall-ChocolateyEnvironmentVariable -VariableName 'ANDROID_HOME' -VariableType 'Machine'
+
+  
 
   Remove-Item $destination -Force -Recurse
 
