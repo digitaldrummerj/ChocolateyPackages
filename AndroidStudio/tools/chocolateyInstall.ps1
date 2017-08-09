@@ -36,7 +36,14 @@ $studioExe = GetStudioExe
 if ($settings.addtodesktop -eq "true")
 {
 	Write-Host "AddToDesktop Value: " $settings.addtodesktop
-	Install-ChocolateyShortcut $studioExe
+	
+    $desktopPath = [Environment]::GetFolderPath("Desktop")
+    $iconPath = Join-Path $(Split-Path $studioExe) 'studio.ico'
+    
+    Install-ChocolateyShortcut `
+        -ShortcutFilePath "$desktopPath\$package.lnk" `
+        -TargetPath "$studioExe" `
+        -IconLocation "$iconPath"
 }
 
 if ($settings.pinnedtotaskbar -eq "true")
