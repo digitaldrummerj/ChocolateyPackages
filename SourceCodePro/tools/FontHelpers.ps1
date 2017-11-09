@@ -471,6 +471,38 @@ function Add-SingleFont($filePath)
 }
 
 #*******************************************************************
+# Function Get-RegistryStringNameFromValue()
+#
+# Purpose:  Return the Registry value name
+#
+# Input:    $keyPath    Regsitry key drive path
+#           $valueData  Regsitry value sting data
+#
+# Returns:  Registry string value name
+#
+#*******************************************************************
+function Get-RegistryStringNameFromValue([string] $keyPath, [string] $valueData)
+{
+    $pattern = [Regex]::Escape($valueData)
+
+    foreach($property in (Get-ItemProperty $keyPath).PsObject.Properties)
+    {
+        ## Skip the property if it was one PowerShell added
+        if(($property.Name -eq "PSPath") -or
+            ($property.Name -eq "PSChildName"))
+        {
+            continue
+        }
+        ## Search the text of the property
+        $propertyText = "$($property.Value)"
+        if($propertyText -match $pattern)
+        {
+            "$($property.Name)"
+        }
+    }
+}
+
+#*******************************************************************
 # Function Remove-SingleFont()
 #
 # Purpose:  Uninstall a font file
