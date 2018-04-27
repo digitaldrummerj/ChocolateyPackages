@@ -7,4 +7,4 @@ Install-ChocolateyPath $envPlatformsPath 'Machine'
 Install-ChocolateyEnvironmentVariable 'ANDROID_HOME' ${envPath} 'Machine'
 refreshenv
 
-echo yes | android update sdk --filter tools,platform-tools --all --no-ui
+echo yes | android update sdk --filter tools --filter platform-tools --all --no-ui
