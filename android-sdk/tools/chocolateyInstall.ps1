@@ -4,7 +4,9 @@ Install-ChocolateyZipPackage -PackageName $packageName -url $downUrl -unzipLocat
  
 Install-ChocolateyPath $envToolsPath  'Machine'
 Install-ChocolateyPath $envPlatformsPath 'Machine'
+Install-ChocolateyPath $envToolsBinPath 'Machine'
 Install-ChocolateyEnvironmentVariable 'ANDROID_HOME' ${envPath} 'Machine'
+New-Item $env:userprofile\.android\repositories.cfg -type file
 refreshenv
 
-echo yes | android update sdk --filter tools,platform-tools --all --no-ui
+echo yes | sdkmanager tools platform-tools

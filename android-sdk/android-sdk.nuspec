@@ -3,15 +3,15 @@
   <metadata>
     <id>android-sdk</id>
     <title>Android SDK</title>
-    <version>25.2.3.1</version>
+    <version>26.1.1</version>
     <authors>Google</authors>
     <owners>Justin James</owners>
     <summary>The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.</summary>
-    <description>The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.
+    <description>The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android if you do not want to use Android Studio.  It is suggested that you use Android Studio to manager the SDK versions installed.
 
     ## Post Install Steps
 
-    The Android SDK install only installs the tools and platform tools.  It does not install an API SDK version.  You will need to do a start -> run -> android to launch the Android SDK Manager.  Then select the build tools and API that you want to install. 
+    The Android SDK install only installs the tools and platform tools.  It does not install an API SDK version.  You will need to run the sdkmanager.  Then select the build tools and API that you want to install. 
     
     </description>
     <projectUrl>https://developer.android.com/studio/index.html</projectUrl>
@@ -25,12 +25,6 @@
     </dependencies>
     <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
     <releaseNotes>Release Notes: [https://developer.android.com/studio/releases/sdk-tools.html](https://developer.android.com/studio/releases/sdk-tools.html)
-    
-### Chocolatey Package Change Log:
-
-* Fixed issue with the environment variables having whitespace by moving android-sdk to c:\android
-* Add call to the android sdk manager to update the tools and platform-tools after install.  This was need since Google removed the platform-tools from the SDK tools package.
-
     </releaseNotes>
   </metadata>
   <files>

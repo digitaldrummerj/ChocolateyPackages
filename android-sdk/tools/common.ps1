@@ -1,16 +1,17 @@
 $packageName = 'android-sdk'
 
-$downUrl = 'https://dl.google.com/android/repository/tools_r25.2.3-windows.zip'
-$checksum = '23d5686ffe489e5a1af95253b153ce9d6f933e5dbabe14c494631234697a0e08'
+$downUrl = 'https://dl.google.com/android/repository/sdk-tools-windows-4333796.zip'
+$checksum = '7e81d69c303e47a4f0e748a6352d85cd0c8fd90a5a95ae4e076b5e5f960d3c7a'
 $checksumType = 'sha256'
 
 $androidPath = "${Env:SystemDrive}\Android"
 $destination = "${androidPath}\android-sdk"
 
-$fileName = 'tools_r25.2.3-windows.zip'
+$fileName = 'sdk-tools-windows-4333796.zip'
 
 $envPath = "${destination}"
 $envToolsPath = "${envPath}\tools"
+$envToolsBinPath = "${envtoolsPath}\bin"
 $envPlatformsPath = "${envPath}\platform-tools"
 
 # Function to remove a value from the Machine Environment Variable path value
