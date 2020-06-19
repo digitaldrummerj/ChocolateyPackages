@@ -21,7 +21,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/automatic/android-sdk/android.svg</iconUrl>
     <dependencies>
-      <dependency id="jdk8"  />
+      <dependency id="adoptopenjdk8"  />
     </dependencies>
     <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
     <releaseNotes>Release Notes: [https://developer.android.com/studio/releases/sdk-tools.html](https://developer.android.com/studio/releases/sdk-tools.html)
