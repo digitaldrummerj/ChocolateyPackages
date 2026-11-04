@@ -7,9 +7,9 @@ function Get-CurrentDirectory
 $fontHelpersPath = (Join-Path (Get-CurrentDirectory) 'FontHelpers.ps1')
 . $fontHelpersPath
 
-$fontUrl = 'https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip'
+$fontUrl = 'https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip'
 $checksumType = 'sha256';
-$checksum = 'DA2AC159497D31B0C6D9DAA8FC390FB8252E75B4A9805ACE6A2C9CCCAED4932E';
+$checksum = '754a2e3ebb945ae905d720ac5896b3b34acc9546dd6551ef9536869788629dae';
 
 $destination = Join-Path $Env:Temp 'SourceCodePro'
 

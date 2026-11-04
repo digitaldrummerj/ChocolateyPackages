@@ -1,21 +1,23 @@
 <?xml version="1.0"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>SourceCodePro</id>
-    <title>Source Code Pro Programming Font</title>
-    <version>2.030.0</version>
-    <authors>Adobe Systems Incorporated</authors>
+    <version>2.042</version>
+    <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
     <owners>Justin James</owners>
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>Source Code Pro Programming Font</title>
+    <authors>Adobe Systems Incorporated</authors>
+    <projectUrl>https://github.com/adobe-fonts/source-code-pro</projectUrl>
+    <iconUrl>http://blogs.adobe.com/typblography/files/2012/09/SourceCodeSplash.png</iconUrl>
+    <licenseUrl>https://github.com/adobe-fonts/source-code-pro/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>sourcecodepro monospace opentype programming font</tags>
     <summary>Monospaced OpenType programming font</summary>
     <description>Source Code Pro is a set of OpenType fonts that have been designed to work well in user interface (UI) environments. In addition to a functional OpenType font, this open source project provides all of the source files that were used to build this OpenType font by using the AFDKO makeotf tool.
     </description>
-    <projectUrl>https://github.com/adobe-fonts/source-code-pro</projectUrl>
-    <tags>monospace opentype programming font</tags>
-    <licenseUrl>https://github.com/adobe-fonts/source-code-pro/blob/master/LICENSE.txt</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>http://blogs.adobe.com/typblography/files/2012/09/SourceCodeSplash.png</iconUrl>
     <releaseNotes>https://github.com/adobe-fonts/source-code-pro/releases</releaseNotes>
-    <packageSourceUrl>https://github.com/digitaldrummerj/ChocolateyPackages</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
